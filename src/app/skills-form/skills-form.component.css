@@ -1,0 +1,18 @@
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-submit {
+  width: 50%;
+  margin: 0rem 0.5rem;
+}
+
+.btn-secondary {
+  width: 50%;
+  margin: 0rem 0.5rem;
+}
+
+.submission-alert {
+  margin: 1rem 0.5rem 0rem 0.5rem;
+}

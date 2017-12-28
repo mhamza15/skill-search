@@ -1,0 +1,5 @@
+applications:
+- name: skill-search
+  path: .
+  command: node server.js
+  buildpack: sdk-for-nodejs

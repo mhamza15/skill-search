@@ -1,0 +1,85 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Submit new person</h4>
+    <p class="card-text">Enter details for a new person to add to the collection</p>
+    <form novalidate [formGroup]="skillForm" (submit)="onSubmit()">
+      <fieldset formGroupName="name">
+        <div class="form-group">
+          <label>First name</label>
+          <input formControlName="firstName" type="text" class="form-control" placeholder="First name" [ngClass]="{
+            'is-valid': name.controls.firstName.dirty && name.controls.firstName.valid,
+            'is-invalid': name.controls.firstName.dirty && name.controls.firstName.invalid
+          }">
+        </div>
+        <div class="form-group">
+          <label>Last name</label>
+          <input formControlName="lastName" type="text" class="form-control" placeholder="Last name" [ngClass]="{
+            'is-valid': name.controls.lastName.dirty && name.controls.lastName.valid,
+            'is-invalid': name.controls.lastName.dirty && name.controls.lastName.invalid
+          }">
+        </div>
+      </fieldset>
+      <div class="form-row">
+        <div class="form-group col-sm-10">
+          <label>Skills (comma separated)</label>
+          <input formControlName="skills" type="text" class="form-control" placeholder="ex: Java, Python, HTML" [ngClass]="{
+            'is-valid': skills.dirty && skills.valid,
+            'is-invalid': skills.dirty && skills.invalid
+          }">
+        </div>
+        <div class="form-group col-md-2">
+          <label>Experience</label>
+          <input formControlName="experience" type="number" class="form-control" placeholder="# years" [ngClass]="{
+            'is-valid': experience.dirty && experience.valid,
+            'is-invalid': experience.dirty && experience.invalid
+          }">
+        </div>
+      </div>
+      <fieldset formGroupName="address">
+        <div class="form-group">
+          <label>Address Line 1</label>
+          <input formControlName="line1" type="text" class="form-control" placeholder="Address 1" [ngClass]="{
+            'is-valid': address.controls.line1.dirty && address.controls.line1.valid,
+            'is-invalid': address.controls.line1.dirty && address.controls.line1.invalid
+          }">
+        </div>
+        <div class="form-group">
+          <label>Address Line 2</label>
+          <input formControlName="line2" type="text" class="form-control" placeholder="Address 2" [ngClass]="{
+            'is-valid': address.controls.line2.dirty && address.controls.line2.valid,
+            'is-invalid': address.controls.line2.dirty && address.controls.line2.invalid
+          }">
+        </div>
+        <div class="form-group">
+          <label>City</label>
+          <input formControlName="city" type="text" class="form-control" placeholder="City" [ngClass]="{
+            'is-valid': address.controls.city.dirty && address.controls.city.valid,
+            'is-invalid': address.controls.city.dirty && address.controls.city.invalid
+          }">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-10">
+            <label>State</label>
+            <input formControlName="state" type="text" class="form-control" placeholder="State" [ngClass]="{
+              'is-valid': address.controls.state.dirty && address.controls.state.valid,
+              'is-invalid': address.controls.state.dirty && address.controls.state.invalid
+            }">
+          </div>
+          <div class="form-group col-md-2">
+            <label>Zip</label>
+            <input formControlName="zip" type="text" class="form-control" placeholder="Zip" [ngClass]="{
+              'is-valid': address.controls.zip.dirty && address.controls.zip.valid,
+              'is-invalid': address.controls.zip.dirty && address.controls.zip.invalid
+            }">
+          </div>
+        </div>
+      </fieldset>
+      <div class="buttons">
+        <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+        <button type="reset" class="btn btn-secondary btn-secondary">Reset</button>
+      </div>
+      <div *ngIf="submissionIsInvalid" class="alert alert-warning submission-alert">Please fill out all fields correctly</div>
+      <div *ngIf="submissionSuccess" class="alert alert-success submission-alert">User added!</div>
+    </form>
+  </div>
+</div>

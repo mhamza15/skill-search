@@ -1,0 +1,12 @@
+e2e/
+node_modules/
+.angular-cli.json
+.editorconfig
+.gitignore
+karma.conf.js
+package-lock.json
+protractor.conf.js
+README.node_modules
+tsconfig.json
+tslint.json
+src/

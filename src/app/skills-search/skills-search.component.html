@@ -1,0 +1,17 @@
+<div class="card" style="height: 100%">
+  <div class="card-body">
+    <h4 class="card-title">Search for people with specific skills</h4>
+    <div class="input-group">
+      <input [(ngModel)]="searchText" (input)="searchFieldChange()" (change)="submit()" type="text" class="form-control" placeholder="Search for skills (comma separated)">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button">Go</button>
+      </span>
+    </div>
+    <ul class="list-group" style="margin-top: 1rem">
+      <li *ngFor="let person of results" class="list-group-item">
+        {{ person.firstName + ' ' + person.lastName }}
+        <span style="float: right">{{ person.skills.join(', ') }}</span>
+      </li>
+    </ul>
+  </div>
+</div>
