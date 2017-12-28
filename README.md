@@ -1,4 +1,4 @@
-# skill-search.w3ibm.mybluemix.net
+[https://skill-search.w3ibm.mybluemix.net/](https://skill-search.w3ibm.mybluemix.net/)
 
 # SkillSearch
 
